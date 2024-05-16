@@ -8,7 +8,10 @@
       }"
     >
       {{ tarefa.descricao }}
-      <button class="btn btn-primary" (click)="concluirTarefa(tarefa)">
+      <button
+        [ngClass]="tarefa.concluida ? 'btn btn-danger' : 'btn btn-success'"
+        (click)="concluirTarefa(tarefa)"
+      >
         {{ tarefa.concluida ? "Desfazer" : "Concluir" }}
       </button>
     </li>
